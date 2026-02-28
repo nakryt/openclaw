@@ -2,6 +2,9 @@ FROM node:22-alpine
 
 WORKDIR /app
 
+# Alpine needs git for npm to resolve git dependencies
+RUN apk add --no-cache git
+
 # Встановлюємо OpenClaw глобально
 RUN npm install -g openclaw
 
